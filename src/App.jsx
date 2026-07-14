@@ -1,13 +1,51 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CheckCircle2, ChevronDown, Shield, Crown, BookOpen, Zap, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ChevronDown, Shield, Crown, BookOpen, Zap, ArrowRight, Play } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 // Trocar pelo link real do checkout quando estiver pronto
 const CHECKOUT_URL = '#oferta';
 const VSL_ID = 'kQM8D3em3eU';
+
+// O player só é carregado no clique. Evita ~1 MB de scripts do YouTube no load.
+function VslPlayer() {
+  const [playing, setPlaying] = useState(false);
+
+  if (playing) {
+    return (
+      <iframe
+        className="absolute inset-0 w-full h-full"
+        src={`https://www.youtube-nocookie.com/embed/${VSL_ID}?autoplay=1&rel=0&modestbranding=1`}
+        title="Beabá do Crédito · Eliane Moreira"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setPlaying(true)}
+      aria-label="Assistir ao vídeo"
+      className="group absolute inset-0 w-full h-full flex items-center justify-center"
+    >
+      <img
+        src={`https://i.ytimg.com/vi/${VSL_ID}/hqdefault.jpg`}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <span className="relative z-10 w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent flex items-center justify-center shadow-2xl transition-transform group-hover:scale-110">
+        <Play className="w-7 h-7 md:w-9 md:h-9 text-primary ml-1 fill-primary" />
+      </span>
+    </button>
+  );
+}
 
 function App() {
   const mainRef = useRef(null);
@@ -53,7 +91,16 @@ function App() {
       {/* HERO: tudo acima da dobra no mobile */}
       <section className="relative w-full min-h-[100svh] flex flex-col bg-primary overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.07] mix-blend-overlay pointer-events-none">
-          <img src="/assets/ChatGPT-Image-13-de-mai.-de-2025-18_15_40.png" alt="" className="w-[420px] md:w-[700px] h-auto object-contain animate-float-spin" />
+          <img
+            src="/assets/chave-hero.webp"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="800"
+            className="w-[420px] md:w-[700px] h-auto object-contain animate-float-spin"
+          />
         </div>
 
         {/* Barra superior */}
@@ -66,8 +113,12 @@ function App() {
 
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center w-full max-w-3xl mx-auto px-4 py-4 sm:py-6 text-center">
           <img
-            src="/assets/Design-sem-nome-3-1.png"
+            src="/assets/logo-beaba.webp"
             alt="Beabá do Crédito"
+            width="300"
+            height="300"
+            fetchPriority="high"
+            decoding="async"
             className="hero-text w-20 sm:w-24 md:w-32 mb-3 md:mb-4 drop-shadow-2xl"
           />
 
@@ -86,13 +137,7 @@ function App() {
               ▶ Assista antes de entrar
             </p>
             <div className="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden border-2 border-accent/30 shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-dark">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src={`https://www.youtube-nocookie.com/embed/${VSL_ID}?rel=0&modestbranding=1`}
-                title="Beabá do Crédito · Eliane Moreira"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <VslPlayer />
             </div>
           </div>
 
@@ -286,7 +331,15 @@ function App() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 fade-up">
           <div className="w-full md:w-2/5 relative">
             <div className="absolute inset-0 bg-accent rounded-full blur-[100px] opacity-20"></div>
-            <img src="/assets/WER_2443-scaled.webp" alt="Eliane Moreira" className="relative z-10 w-full max-w-xs mx-auto rounded-3xl border-4 border-accent shadow-2xl object-cover" />
+            <img
+              src="/assets/eliane.webp"
+              alt="Eliane Moreira"
+              width="640"
+              height="960"
+              loading="lazy"
+              decoding="async"
+              className="relative z-10 w-full max-w-xs mx-auto rounded-3xl border-4 border-accent shadow-2xl object-cover"
+            />
           </div>
           <div className="w-full md:w-3/5 text-center md:text-left">
             <h2 className="text-2xl md:text-4xl font-display font-bold text-accent uppercase mb-2">Eliane Moreira</h2>
