@@ -1,9 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CheckCircle2, ChevronDown, Shield, Crown, BookOpen, Zap, ArrowRight, Play } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 // Trocar pelo link real do checkout quando estiver pronto
 const CHECKOUT_URL = '#oferta';
@@ -51,27 +47,22 @@ function App() {
   const mainRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.hero-text', {
-        y: 24,
-        opacity: 0,
-        stagger: 0.08,
-        duration: 0.8,
-        ease: 'power3.out',
-        delay: 0.15
-      });
+    const elems = mainRef.current?.querySelectorAll('.fade-up') ?? [];
 
-      gsap.utils.toArray('.fade-up').forEach((elem) => {
-        gsap.from(elem, {
-          scrollTrigger: { trigger: elem, start: 'top 85%' },
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power3.out'
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
         });
-      });
-    }, mainRef);
-    return () => ctx.revert();
+      },
+      { rootMargin: '0px 0px -15% 0px' }
+    );
+
+    elems.forEach((elem) => observer.observe(elem));
+    return () => observer.disconnect();
   }, []);
 
   const CtaButton = ({ text, className = "" }) => (
