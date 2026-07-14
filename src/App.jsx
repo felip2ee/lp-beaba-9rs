@@ -58,7 +58,7 @@ function App() {
 
         {/* Barra superior */}
         <div className="relative z-10 w-full bg-secondary py-2 px-4 text-center">
-          <p className="text-[10px] sm:text-xs md:text-sm font-semibold text-white/90 tracking-wider uppercase leading-snug">
+          <p className="text-[11px] sm:text-xs md:text-sm font-semibold text-white/90 tracking-wider uppercase leading-snug">
             Acesso imediato · O mesmo caminho que já estruturou mais de R$ 400 milhões em crédito
           </p>
 
@@ -71,18 +71,18 @@ function App() {
             className="hero-text w-20 sm:w-24 md:w-32 mb-3 md:mb-4 drop-shadow-2xl"
           />
 
-          <h1 className="hero-text font-display font-extrabold text-accent uppercase leading-[1.12] text-[1.4rem] sm:text-3xl md:text-[2.6rem] drop-shadow-lg">
+          <h1 className="hero-text font-display font-extrabold text-accent uppercase leading-[1.12] text-[1.75rem] sm:text-3xl md:text-[2.6rem] drop-shadow-lg">
             O banco não te nega crédito.<br className="hidden sm:block" />{' '}
             <span className="text-white">Ele nega a forma como você pede.</span>
           </h1>
 
-          <p className="hero-text mt-3 md:mt-4 text-white/90 text-[0.85rem] sm:text-base md:text-lg leading-snug max-w-2xl">
+          <p className="hero-text mt-3 md:mt-4 text-white/90 text-base sm:text-base md:text-lg leading-snug max-w-2xl">
             Por <strong className="text-white">R$ 9,90</strong> você entra na <strong className="text-accent">Comunidade da Rainha</strong> e recebe o manual que ensina, passo a passo, a pedir do jeito certo. Nunca mais entre no banco no escuro.
           </p>
 
           {/* VSL */}
           <div className="hero-text w-full mt-4 md:mt-6">
-            <p className="text-accent/90 text-[11px] sm:text-sm font-semibold uppercase tracking-wider mb-2">
+            <p className="text-accent/90 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2">
               ▶ Assista antes de entrar
             </p>
             <div className="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden border-2 border-accent/30 shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-dark">
@@ -98,8 +98,8 @@ function App() {
 
           {/* CTA */}
           <div className="hero-text w-full mt-4 md:mt-6">
-            <CtaButton text="Quero entrar por R$ 9,90" className="w-full sm:w-auto text-base md:text-xl px-8 py-4 md:px-12 md:py-5" />
-            <p className="mt-2 text-white/60 text-[11px] sm:text-sm">
+            <CtaButton text="Quero entrar agora" className="w-full sm:w-auto text-lg md:text-xl px-8 py-4 md:px-12 md:py-5" />
+            <p className="mt-2 text-white/60 text-xs sm:text-sm">
               Acesso imediato · Comunidade + Manual Vol. 1 · Pagamento único
             </p>
           </div>
@@ -113,7 +113,7 @@ function App() {
             ].map(([title, sub]) => (
               <li key={title} className="flex items-center sm:items-start gap-2 bg-secondary/40 border border-accent/15 rounded-lg px-3 py-2">
                 <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
-                <span className="text-[11px] sm:text-xs leading-tight">
+                <span className="text-[13px] sm:text-xs leading-tight">
                   <strong className="text-white block">{title}</strong>
                   <span className="text-white/60">{sub}</span>
                 </span>
@@ -201,7 +201,7 @@ function App() {
             <p className="text-white/60 text-lg">Valor real: <span className="line-through">R$ 344</span></p>
             <div className="text-accent font-black text-6xl md:text-8xl leading-none my-3 drop-shadow-lg">R$ 9,90</div>
             <p className="text-white/80 text-lg mb-8">Pagamento único. Sem recorrência.</p>
-            <CtaButton text="Quero entrar por R$ 9,90" className="w-full md:w-auto text-lg md:text-xl px-10 py-5" />
+            <CtaButton text="Quero entrar agora" className="w-full md:w-auto text-lg md:text-xl px-10 py-5" />
           </div>
         </div>
       </section>
@@ -305,12 +305,14 @@ function App() {
         <div className="max-w-3xl mx-auto mb-12 fade-up">
           <h2 className="text-2xl md:text-4xl font-display font-bold text-white uppercase mb-3">O banco não aprova empresas por sorte.</h2>
           <h3 className="text-xl md:text-2xl text-accent font-bold mb-8">Aprova quem sabe o que está fazendo.</h3>
-          <CtaButton text="Quero entrar por R$ 9,90" className="w-full md:w-auto text-lg px-10 py-5" />
+          <CtaButton text="Quero entrar agora" className="w-full md:w-auto text-lg px-10 py-5" />
         </div>
 
         <div className="max-w-3xl mx-auto pt-8 border-t border-white/5">
-          <h3 className="font-display font-bold text-lg text-white/60 mb-5 uppercase tracking-widest">
-            Beabá do Crédito · Eliane Moreira
+          <h3 className="font-display font-bold text-lg text-white/60 mb-5 uppercase tracking-widest leading-relaxed">
+            Beabá do Crédito
+            <br />
+            Eliane Moreira
           </h3>
           <p className="text-sm mb-8 max-w-2xl mx-auto leading-relaxed">
             Este site não é afiliado ao Facebook. A compra deste material não garante resultados automáticos; o sucesso depende da aplicação correta do conteúdo.
