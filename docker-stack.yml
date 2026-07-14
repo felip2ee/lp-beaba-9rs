@@ -2,12 +2,15 @@ version: "3.8"
 
 services:
   lp-eliane:
-    image: ghcr.io/SEU-USUARIO/lp-eliane-credito:latest
+    image: ghcr.io/felip2ee/lp-beaba-9rs:latest
     networks:
-      - traefik-public
+      - RainhaNet
     deploy:
       mode: replicated
       replicas: 2
+      placement:
+        constraints:
+          - node.role == manager
       update_config:
         order: start-first
         failure_action: rollback
@@ -15,28 +18,22 @@ services:
         condition: on-failure
       resources:
         limits:
-          cpus: "0.25"
-          memory: 128M
+          cpus: "0.5"
+          memory: 256M
       labels:
         - traefik.enable=true
-        - traefik.docker.network=traefik-public
-        - traefik.constraint-label=traefik-public
+        - traefik.docker.network=RainhaNet
 
         # HTTPS
-        - traefik.http.routers.lp-eliane.rule=Host(`lp.seudominio.com.br`)
+        - traefik.http.routers.lp-eliane.rule=Host(`beaba.elianearainhadocredito.com`)
         - traefik.http.routers.lp-eliane.entrypoints=websecure
-        - traefik.http.routers.lp-eliane.tls=true
-        - traefik.http.routers.lp-eliane.tls.certresolver=letsencrypt
+        - traefik.http.routers.lp-eliane.tls.certresolver=letsencryptresolver
+        - traefik.http.routers.lp-eliane.priority=1
         - traefik.http.routers.lp-eliane.service=lp-eliane
         - traefik.http.services.lp-eliane.loadbalancer.server.port=80
-
-        # HTTP -> HTTPS
-        - traefik.http.routers.lp-eliane-http.rule=Host(`lp.seudominio.com.br`)
-        - traefik.http.routers.lp-eliane-http.entrypoints=web
-        - traefik.http.routers.lp-eliane-http.middlewares=lp-eliane-redirect
-        - traefik.http.middlewares.lp-eliane-redirect.redirectscheme.scheme=https
-        - traefik.http.middlewares.lp-eliane-redirect.redirectscheme.permanent=true
+        - traefik.http.services.lp-eliane.loadbalancer.passHostHeader=true
 
 networks:
-  traefik-public:
+  RainhaNet:
     external: true
+    name: RainhaNet
