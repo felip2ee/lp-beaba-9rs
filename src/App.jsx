@@ -412,7 +412,7 @@ function App() {
         <div className="max-w-3xl mx-auto mb-12 fade-up">
           <h2 className="text-2xl md:text-4xl font-display font-bold text-white uppercase mb-3">Em 90 dias, sua empresa chega no banco diferente.</h2>
           <h3 className="text-xl md:text-2xl text-accent font-bold mb-3">Não porque o mercado mudou. Porque você mudou a forma de pedir.</h3>
-          <p className="text-white/60 mb-8">Manual + plano de 90 dias + comunidade. De {ANCHOR} por {PRICE} ou {INSTALLMENTS}, com 7 dias de garantia.</p>
+          <p className="text-white/60 mb-8">Manual + plano de 90 dias + comunidade.<br />De {ANCHOR} por {PRICE} ou {INSTALLMENTS}.<br />Com 7 dias de garantia.</p>
           <CtaButton className="w-full md:w-auto text-base sm:text-lg px-6 py-5" />
         </div>
 
