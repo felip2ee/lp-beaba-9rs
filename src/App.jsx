@@ -425,7 +425,18 @@ function App() {
           <p className="text-sm mb-8 max-w-2xl mx-auto leading-relaxed">
             Este site não é afiliado ao Facebook. A compra deste material não garante aprovação de crédito; quem decide é a instituição financeira. O resultado depende da aplicação do conteúdo.
           </p>
-          <p className="text-xs">Copyright © 2026 Todos os Direitos Reservados.</p>
+          <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-3 text-xs">
+            <p>© {new Date().getFullYear()} Eliane Moreira. Todos os direitos reservados.</p>
+            <a
+              href="https://www.instagram.com/novadigital.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-white/80"
+            >
+              <span>Desenvolvido por</span>
+              <img src="/assets/logo-novadigital.webp" alt="Nova Digital" className="relative top-[2px] h-6 w-auto opacity-90" loading="lazy" />
+            </a>
+          </div>
         </div>
       </footer>
     </div>
