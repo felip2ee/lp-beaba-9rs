@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { CheckCircle2, ChevronDown, Shield, Crown, BookOpen, Zap, ArrowRight, Star, XCircle, ListChecks, FileText, Quote } from 'lucide-react';
 
-// Trocar pelo link real do checkout quando estiver pronto
-const CHECKOUT_URL = '#oferta';
+const CHECKOUT_URL = 'https://pay.cakto.com.br/338vipe_980748';
 const CTA_TEXT = 'Quero meu acesso por R$ 97';
 const PRICE = 'R$ 97';
 const ANCHOR = 'R$ 344';

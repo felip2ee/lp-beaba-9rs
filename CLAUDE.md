@@ -2,6 +2,7 @@
 
 ## Oferta atual
 - **Preço:** R$ 97 à vista ou 12x de R$ 10,02 (confirmado em 2026-10-16). Âncora riscada: **de R$ 344** (147 manual + 197 comunidade). Confirmado em 2026-10-16. Não exibir valor por item.
+- Checkout: Cakto, `https://pay.cakto.com.br/338vipe_980748` (`CHECKOUT_URL` em `src/App.jsx`)
 - **Sem VSL.** A página vende só com texto. Copy curta, com promessa concreta (o que a pessoa vai saber fazer em 90 dias), nunca promessa de aprovação.
 - **Entregáveis (pilha da LP, tudo existe no PDF do Volume 1):**
   - Beabá do Crédito · Volume 1: manual de 34 páginas, 8 módulos: tipos de crédito, cenário dos bancos, 7 erros que derrubam aprovações, como bancos avaliam (7 critérios), capacidade de captação, engenharia de crédito, capital inteligente, plano de 90 dias.
@@ -82,7 +83,6 @@ Headline em produção: **B**.
 - As subs de A, C e D ainda citam R$ 9,90; ajustar pra R$ 97 antes de testar.
 
 ## Pendências
-- Link de checkout (`CHECKOUT_URL` em `src/App.jsx` ainda é `#oferta`)
 - Plataforma das avaliações (Hotmart, Kiwify, outra) pra citar na seção de prova
 - Acesso à comunidade: vitalício ou por tempo? A LP não afirma.
 - VSL removida em 2026-10-16 (era YouTube `kQM8D3em3eU`). Se voltar, entra entre a sub e os bullets do hero.
