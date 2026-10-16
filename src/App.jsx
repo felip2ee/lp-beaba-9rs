@@ -254,7 +254,7 @@ function App() {
               [FileText, 'Guia Pronampe e Procred 360', 'Quem pode, limite, taxa, prazo, qual pedir primeiro e o passo no e-CAC que trava a maioria dos pedidos.'],
               [Zap, '8 checklists "Coloque em prática"', 'Um por módulo. Fecha o capítulo e já sabe o que fazer na sua empresa naquela semana.'],
               [Crown, 'Comunidade da Rainha', 'Dúvidas respondidas, casos reais de quem está captando, avisos de linhas abertas. Você não age sozinho.'],
-              [Shield, 'Garantia Rainha de 7 dias', 'Leia tudo, entre na comunidade. Se não for pra você, devolvemos. Sem pergunta.']
+              [Shield, 'Garantia incondicional de 7 dias', 'Leia tudo, entre na comunidade. Se não for pra você, devolvemos. Sem pergunta.']
             ].map(([Icon, title, sub]) => (
               <div key={title} className="bg-secondary rounded-2xl p-5 md:p-6 flex gap-4 border border-accent/20">
                 <Icon className="w-7 h-7 text-accent shrink-0" />
@@ -350,7 +350,7 @@ function App() {
           <div className="bg-secondary/40 border-2 border-accent rounded-[2.5rem] p-8 md:p-12 text-center shadow-[0_0_60px_rgba(220,164,82,0.15)]">
             <Shield className="w-14 h-14 text-accent mx-auto mb-5" />
             <h2 className="text-2xl md:text-4xl font-display font-bold text-accent uppercase mb-4">
-              Garantia Rainha de 7 dias
+              Garantia incondicional de 7 dias
             </h2>
             <p className="text-white/85 text-base md:text-lg leading-relaxed mb-6">
               Entre, leia os 8 módulos, participe da comunidade. Se em 7 dias você achar que não valeu, manda uma mensagem e os {PRICE} voltam. <strong className="text-white">Sem pergunta, sem burocracia.</strong>

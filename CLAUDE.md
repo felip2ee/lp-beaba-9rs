@@ -10,7 +10,7 @@
   - Guia Pronampe e Procred 360 (tabela no módulo 1; ref. julho 2026, Selic 14,25%, pós-fixado)
   - 8 checklists "Coloque em prática" (um por módulo)
   - Comunidade da Rainha
-  - Garantia Rainha de 7 dias (reembolso sem pergunta)
+  - Garantia incondicional de 7 dias (reembolso sem pergunta)
 - **Upsell dentro do PDF:** "Consulta Direta com a Rainha", R$ 497 (reunião individual ao vivo + pesquisa de CPF/CNPJ + parecer + plano de ação). A LP não vende isso; não citar.
 - **Regra:** só citar bônus/entregável que exista no PDF. Não inventar.
 - **Ideia central:** independência de crédito. Vilão = **o desconhecimento** (pedir crédito sem entender a regra do jogo), não o intermediário.
