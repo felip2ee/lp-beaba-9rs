@@ -2,7 +2,16 @@
 
 ## Oferta atual
 - **Preço:** R$ 9,90 (pagamento único)
-- **Entregáveis:** Acesso à Comunidade da Rainha + Beabá do Crédito — Volume 1 (manual completo para acessar crédito de forma independente)
+- **Entregáveis (pilha da LP, tudo existe no PDF do Volume 1):**
+  - Beabá do Crédito · Volume 1 (âncora R$ 147): manual de 34 páginas, 8 módulos: tipos de crédito, cenário dos bancos, 7 erros que derrubam aprovações, como bancos avaliam (7 critérios), capacidade de captação, engenharia de crédito, capital inteligente, plano de 90 dias.
+  - Plano de Captação em 90 dias (módulo 8, 3 fases de 30 dias com checklist)
+  - Guia Pronampe e Procred 360 (tabela no módulo 1; ref. julho 2026, Selic 14,25%, pós-fixado)
+  - 8 checklists "Coloque em prática" (um por módulo)
+  - Comunidade da Rainha (âncora R$ 197)
+  - Garantia Rainha de 7 dias (reembolso sem pergunta)
+  - Âncora total: R$ 344
+- **Upsell dentro do PDF:** "Consulta Direta com a Rainha", R$ 497 (reunião individual ao vivo + pesquisa de CPF/CNPJ + parecer + plano de ação). A LP não vende isso; não citar.
+- **Regra:** só citar bônus/entregável que exista no PDF. Não inventar.
 - **Ideia central:** independência de crédito. Vilão = **o desconhecimento** (pedir crédito sem entender a regra do jogo), não o intermediário.
 
 ## ⚠️ Regra de copy — NUNCA atacar assessoria
@@ -13,7 +22,30 @@ A própria Eliane **presta e cobra por serviço de assessoria/estruturação** (
 - **Prioridade de layout:** mobile-first, hero completo acima da dobra (headline + VSL + CTA + entregáveis, sem rolagem).
 
 ## Autoridade
-Eliane Moreira — 16+ anos no mercado financeiro, participação na estruturação de mais de R$ 400 milhões em operações de crédito aprovadas.
+Eliane Moreira, "a Rainha do Crédito". 16+ anos no mercado financeiro, participação na estruturação de mais de R$ 500 milhões em operações de crédito aprovadas, "centenas de empresas". Número oficial é **R$ 500 milhões** (confirmado em 2026-10-16; versões antigas diziam R$ 400 milhões).
+
+## Prova social (dados reais, informados em 2026-10-16)
+- Nota média **5,0 estrelas** em **mais de 600 avaliações**. Plataforma ainda não informada (a LP não cita).
+- Depoimentos autorizados (constante `TESTIMONIALS` no topo de `src/App.jsx`):
+  - Instituto Thomas: "Consegui capital de giro e coloquei pra girar."
+  - Dr. Fabio Neto: pulava de consultor em consultor, só enrolação; agora entende como funciona e está no processo.
+  - Maria Fátima, costureira: não sabia os fundamentos; depois de se organizar o banco passou a oferecer produtos; hoje tem cartão e giro disponível.
+- Onde aparece: barra do topo, abaixo do CTA do hero, abaixo do preço na oferta e seção própria "5,0 estrelas em mais de 600 avaliações".
+- Nunca inventar depoimento, nome, cidade ou número. Faltou prova: placeholder `[PROVA: ...]`.
+
+## Estrutura da LP (ordem das seções em `src/App.jsx`)
+1. Hero (barra de prova, headline B, sub, VSL, CTA, nota + garantia, 3 entregáveis)
+2. Dor + mecanismo ("O banco não empresta dinheiro. Ele compra confiança."), 7 critérios do banco, 3 erros, parágrafo de posicionamento da assessoria
+3. Autoridade (foto, 16+ anos, R$ 500 mi)
+4. Oferta `#oferta`: pilha completa, âncora R$ 344, preço, CTA, nota
+5. Pra quem é / pra quem não é
+6. Prova social (3 depoimentos) + CTA
+7. Garantia de 7 dias
+8. FAQ (inclui "Vocês garantem a aprovação?": não, quem aprova é o banco)
+9. Fechamento ("Em 90 dias, sua empresa chega no banco diferente.") + CTA + disclaimer
+
+## O que a copy nunca promete
+Aprovação garantida, limpar nome, "sem consulta ao SPC", taxa/prazo/limite fora do que o PDF cita. O disclaimer do rodapé diz que quem decide é a instituição financeira.
 
 ## Identidade visual (tailwind.config.js)
 - primary `#063A29` · secondary `#105B41` · accent (dourado) `#DCA452` · background `#04281C` · dark `#02150E`
@@ -48,6 +80,8 @@ Headline em produção: **B**.
 - QUERO MEU ACESSO AGORA — R$ 9,90
 
 ## Pendências
-- Link/embed da VSL (definir player: YouTube, Vimeo ou Panda)
-- Link de checkout
-- Confirmar uso do preço ancorado ("de R$ 197")
+- Link de checkout (`CHECKOUT_URL` em `src/App.jsx` ainda é `#oferta`)
+- Plataforma das avaliações (Hotmart, Kiwify, outra) pra citar na seção de prova
+- Confirmar âncoras R$ 147 (manual) e R$ 197 (comunidade)
+- Acesso à comunidade: vitalício ou por tempo? A LP não afirma.
+- VSL: YouTube `kQM8D3em3eU`, carregado no clique
