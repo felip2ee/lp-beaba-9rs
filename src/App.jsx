@@ -307,7 +307,7 @@ function App() {
       <section className="py-16 md:py-24 px-5 bg-primary">
         <div className="max-w-4xl mx-auto fade-up">
           <h2 className="text-2xl md:text-4xl font-display font-bold text-accent uppercase text-center mb-8">
-            Pra quem é. E pra quem não é.
+            Pra quem é.<br />E pra quem não é.
           </h2>
           <div className="grid md:grid-cols-2 gap-5">
             <div className="bg-secondary/40 border border-accent/30 rounded-3xl p-6 md:p-8">
